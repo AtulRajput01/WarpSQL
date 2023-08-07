@@ -12,7 +12,7 @@ ENV TOOLS_VERSION 0.8.1
 RUN apk update && apk add --no-cache git gcc musl-dev \
     && go install github.com/timescale/timescaledb-tune/cmd/timescaledb-tune@latest \
     && go install github.com/timescale/timescaledb-parallel-copy/cmd/timescaledb-parallel-copy@latest
-
+    
 ############################
 # Grab old versions from previous version
 ############################
@@ -282,7 +282,6 @@ RUN set -eux \
     && cd / \
     && rm -rf /tmp/pg_repack-${PG_REPACK_VERSION} /tmp/pg_repack.zip \
     && apk del .pg_repack-build-deps 
-
 # Adding pgautofailover
 ARG PG_AUTO_FAILOVER_VERSION
 RUN set -eux \
@@ -314,7 +313,6 @@ RUN set -eux \
     && rm -rf /tmp/pg_auto_failove-${PG_AUTO_FAILOVER_VERSION} /tmp/pg_auto_failove-${PG_AUTO_FAILOVER_VERSION}.zip \
     && apk del .pg_auto_failover-build-deps
 
-
 ## Adding postgresql-hll
 ARG POSTGRES_HLL_VERSION
 RUN set -eux \
@@ -340,4 +338,3 @@ RUN set -eux \
     && cd / \
     && rm -rf /tmp/postgresql-hll-${POSTGRES_HLL_VERSION} /tmp/postgresql-hll-${POSTGRES_HLL_VERSION}.zip \
     && apk del .postgresql-hll-build-deps 
-
