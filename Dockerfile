@@ -132,7 +132,6 @@ RUN set -ex \
     && rm -rf /tmp/citus.tar.gz /tmp/citus-${CITUS_VERSION} \
     && apk del .citus-deps .citus-build-deps
 
-
 ARG POSTGIS_VERSION
 ARG POSTGIS_SHA256
 
@@ -314,7 +313,6 @@ RUN set -eux \
     && rm -rf /tmp/pg_auto_failove-${PG_AUTO_FAILOVER_VERSION} /tmp/pg_auto_failove-${PG_AUTO_FAILOVER_VERSION}.zip \
     && apk del .pg_auto_failover-build-deps
 
-
 ## Adding postgresql-hll
 ARG POSTGRES_HLL_VERSION
 RUN set -eux \
@@ -340,4 +338,3 @@ RUN set -eux \
     && cd / \
     && rm -rf /tmp/postgresql-hll-${POSTGRES_HLL_VERSION} /tmp/postgresql-hll-${POSTGRES_HLL_VERSION}.zip \
     && apk del .postgresql-hll-build-deps 
-
